@@ -25,7 +25,7 @@ jobs:
         pip install pyinstaller tkinter-tooltip # Füge hier alle benötigten Bibliotheken hinzu
 
     - name: Build the EXE
-      run: pyinstaller --onefile --noconsole mypingyv5
+      run: pyinstaller --noconsole mypingyv5
 
     - name: Upload the EXE
       uses: actions/upload-artifact@v4
