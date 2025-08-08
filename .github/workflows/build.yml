@@ -25,7 +25,7 @@ jobs:
         pip install pyinstaller tkinter-tooltip
       
     - name: Build the EXE
-      run: pyinstaller --noconsole --onefile --add-data "devices.csv;." --add-data "settings.json;." mypingyv5.py
+      run: pyinstaller --noconsole --onefile --add-data "devices.csv;." --add-data "settings.json;." mypingyv5
 
     - name: Upload the EXE
       uses: actions/upload-artifact@v4
