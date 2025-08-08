@@ -17,15 +17,15 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11' # Wähle deine Python-Version
+        python-version: '3.11'
 
-    - name: Install PyInstaller and dependencies
+    - name: Install dependencies and PyInstaller
       run: |
         python -m pip install --upgrade pip
-        pip install pyinstaller tkinter-tooltip # Füge hier alle benötigten Bibliotheken hinzu
-
+        pip install pyinstaller tkinter-tooltip
+      
     - name: Build the EXE
-      run: pyinstaller --noconsole mypingyv5
+      run: pyinstaller --noconsole --onefile --add-data "devices.csv;." --add-data "settings.json;." mypingyv5.py
 
     - name: Upload the EXE
       uses: actions/upload-artifact@v4
